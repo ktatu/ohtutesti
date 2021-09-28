@@ -12,6 +12,6 @@ RUN npm install && npm run build
 
 WORKDIR /usr/src/backend
 
-RUN cp -r ../frontend/build . && rm -rf ../frontend && npm install
+RUN cp -r ../frontend/build . && rm -rf ../frontend && npm install             
 
 CMD npm start
