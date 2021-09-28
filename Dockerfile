@@ -1,17 +1,22 @@
-FROM node:latest
+FROM node:16-alpine
 
-EXPOSE 3001
+WORKDIR /usr/src/mielentila
 
-WORKDIR /usr/src/
+ENV PUBLIC_URL=https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus
 
 COPY . .
 
-WORKDIR /usr/src/frontend
+RUN cd ./frontend && \
+    npm ci --production && \
+    npm run build 
 
-RUN npm install && npm run build
+RUN cd ./backend && \
+    cp -r ../frontend/build . && \
+    rm -rf ../frontend && \
+    npm ci --production 
 
-WORKDIR /usr/src/backend
+EXPOSE 3001
 
-RUN cp -r ../frontend/build . && rm -rf ../frontend && npm install             
+WORKDIR /usr/src/mielentila/backend
 
 CMD npm start

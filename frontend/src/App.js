@@ -4,7 +4,7 @@ import {
   Switch, Route, BrowserRouter as Router
 } from 'react-router-dom'
 
-const testUrl = '/api/test'
+const testUrl = '/mielentilatutkimus/api/test'
 
 const getTest = () => {
   const req = axios.get(testUrl)
@@ -15,7 +15,7 @@ const getTest = () => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename='/mielentilatutkimus'>
       <Switch>
         <Route path='/apitest'>
           <button onClick={getTest}>Api kutsu</button>
