@@ -20,7 +20,7 @@ jobs:
           addLatest: true
           registry: docker.io
           buildArgs:
-            PUBLIC_URL=https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus/basic_information_form
+            PUBLIC_URL=https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           
