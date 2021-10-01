@@ -38,7 +38,7 @@ jobs:
         shell: bash
         
       - name: Check production http status
-      - uses: lakuapik/gh-actions-http-status@v1
-      - with:
+        uses: lakuapik/gh-actions-http-status@v1
+        with:
           sites: '["https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus/basic_information_form"]'
           expected: '[200]'
