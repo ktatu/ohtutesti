@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Staging deployment
 
 on:
@@ -44,4 +42,3 @@ jobs:
       - with:
           sites: '["https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus/basic_information_form"]'
           expected: '[200]'
-          
