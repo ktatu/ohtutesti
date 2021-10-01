@@ -2,7 +2,8 @@ FROM node:16-alpine
 
 WORKDIR /usr/src/mielentila
 
-ENV PUBLIC_URL=https://ohtup-staging.cs.helsinki.fi/mielentilatutkimus
+ARG PUBLIC_URL
+ENV PUBLIC_URL=$PUBLIC_URL
 
 COPY . .
 
